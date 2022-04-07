@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter); // 플러그인을 초기화하기 위해서 필요한 코드
 
 export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',
