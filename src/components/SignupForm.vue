@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log('submit');
+      console.log('submit!');
     },
   },
 };
