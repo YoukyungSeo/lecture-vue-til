@@ -16,9 +16,9 @@
           <input id="password" type="text" v-model="password" />
         </div>
         <button
-            :disabled="!isUsernameValid || !password"
-            type="submit"
-            class="btn"
+          :disabled="!isUsernameValid || !password"
+          type="submit"
+          class="btn"
         >
           로그인
         </button>
@@ -43,7 +43,7 @@ export default {
     };
   },
   computed: {
-    isUsernameValid(){
+    isUsernameValid() {
       return validateEmail(this.username);
     },
   },
@@ -56,7 +56,9 @@ export default {
         };
         const { data } = await loginUser(userData);
         console.log(data.user.username);
+        this.$store.commit('setUsername', data.user.username);
         this.logMessage = `${data.user.username}님 환영합니다!`;
+        this.$router.push('/main'); // <router-link to ="">
         // this.initForm();
       } catch (error) {
         console.log(error.response.data);
