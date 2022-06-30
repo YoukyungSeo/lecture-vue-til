@@ -55,9 +55,10 @@ export default {
           password: this.password,
         };
         const { data } = await loginUser(userData);
+        console.log('login token', data.token);
         console.log(data.user.username);
+        this.$store.commit('setToken', data.token);
         this.$store.commit('setUsername', data.user.username);
-        this.logMessage = `${data.user.username}님 환영합니다!`;
         this.$router.push('/main'); // <router-link to ="">
         // this.initForm();
       } catch (error) {
