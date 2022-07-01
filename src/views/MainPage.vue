@@ -2,10 +2,8 @@
   <div>
     <div class="main list-container contents">
       <h1 class="page-header">Today I Learned</h1>
-      <div v-if="isLoading">
-        Loading...
-      </div>
-      <ul>
+      <loading-spinner v-if="isLoading"></loading-spinner>
+      <ul v-else>
         <post-list-item
           v-for="postItem in postItems"
           :key="postItem._id"
@@ -18,10 +16,12 @@
 
 <script>
 import { fetchPosts } from '@/api/index';
+import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 import PostListItem from '@/components/posts/PostListItem.vue';
 export default {
   components: {
     PostListItem,
+    LoadingSpinner,
   },
   data() {
     return {
