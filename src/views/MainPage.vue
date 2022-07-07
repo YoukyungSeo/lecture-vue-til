@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { fetchPosts } from '@/api/index';
+import { fetchPosts } from '@/api/posts';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 import PostListItem from '@/components/posts/PostListItem.vue';
 export default {
