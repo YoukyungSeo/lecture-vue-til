@@ -1,5 +1,5 @@
 // 로그인, 회원가입, 회원탈퇴
-import { instancce } from './index';
+import { instance } from './index';
 
 // 회원가입 API
 function registerUser(userData) {
